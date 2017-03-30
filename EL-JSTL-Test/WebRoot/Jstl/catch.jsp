@@ -9,14 +9,20 @@
 </head>
 <body>
 <h4>传统方式</h4>
-<%="Hello"
+<%
+	try{
+	
+	}catch(Exception e){
+		e.printStackTrace();
+	}
  %>
-<h4>使用jstl和el表达式相结合方式</h4>
-<% 
-	request.setAttribute("name", "小王");
+<h4>使用jstl方式</h4>
+<c:catch var="e">
+<%
+	int a=10/0;
  %>
-<c:out value="Hello"></c:out>
-<c:out value="${name }"></c:out>
-<c:out value="${city }" default="北京"></c:out>
+</c:catch>
+<!-- 异常被保存到e中 然后输出 -->
+${e.message }
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.el.test;
 
 public class User {
+	public User(){}
 	public User(String username, String password) {
 		super();
 		this.username = username;

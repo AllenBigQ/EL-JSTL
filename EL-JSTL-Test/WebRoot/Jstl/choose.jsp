@@ -9,14 +9,28 @@
 </head>
 <body>
 <h4>传统方式</h4>
-<%="Hello"
+<%
+	int a=10;
+	if(a>=10){
+		out.print("a>=10");
+	}else if(a <10){
+		out.print("a<10");
+	}else{
+		out.print("no");
+	}
  %>
-<h4>使用jstl和el表达式相结合方式</h4>
-<% 
-	request.setAttribute("name", "小王");
- %>
-<c:out value="Hello"></c:out>
-<c:out value="${name }"></c:out>
-<c:out value="${city }" default="北京"></c:out>
+<h4>使用jstl方式</h4>
+<c:set var="i" value="10" scope="page"></c:set>
+<c:choose>
+	<c:when test="${ i ge 10 }">
+		i>=10
+	</c:when>
+	<c:when test="${ i lt 10 }">
+		i<10
+	</c:when>
+	<c:otherwise>
+		其他
+	</c:otherwise>
+</c:choose>
 </body>
 </html>

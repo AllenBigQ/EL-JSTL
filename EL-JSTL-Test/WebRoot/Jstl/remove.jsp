@@ -9,14 +9,12 @@
 </head>
 <body>
 <h4>传统方式</h4>
-<%="Hello"
+<%
+	request.setAttribute("name", "小明");
+	request.removeAttribute("name");
  %>
-<h4>使用jstl和el表达式相结合方式</h4>
-<% 
-	request.setAttribute("name", "小王");
- %>
-<c:out value="Hello"></c:out>
-<c:out value="${name }"></c:out>
-<c:out value="${city }" default="北京"></c:out>
+<h4>使用jstl方式</h4>
+<c:set var="name" value="小白" scope="page"></c:set>
+<c:remove var="name" scope="page"/>
 </body>
 </html>
